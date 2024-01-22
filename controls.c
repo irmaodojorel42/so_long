@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:57:46 by root              #+#    #+#             */
-/*   Updated: 2024/01/19 09:57:48 by root             ###   ########.fr       */
+/*   Updated: 2024/01/22 15:54:53 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,29 @@ int	key_hook(int keycode, t_main *m)
 	x = m->player.x;
 	y = m->player.y;
 	if (keycode == UP && m->map[y - 1][x] != '1')
+	{
 		verification_moves(m, x, (y - 1));
+		m->moves_counter++;
+		ft_printf("count moves is %d\n", m->moves_counter);
+	}
 	else if (keycode == DOWN && m->map[y + 1][x] != '1')
+	{
 		verification_moves(m, x, (y + 1));
+		m->moves_counter++;
+		ft_printf("count moves is %d\n", m->moves_counter);
+	}
 	else if (keycode == RIGHT && m->map[y][x + 1] != '1')
+	{
 		verification_moves(m, (x + 1), y);
+		m->moves_counter++;
+		ft_printf("count moves is %d\n", m->moves_counter);
+	}
 	else if (keycode == LEFT && m->map[y][x - 1] != '1')
+	{	
 		verification_moves(m, (x - 1), y);
-	m->moves_counter++;
-	ft_printf("count moves is %d\n", m->moves_counter);
+		m->moves_counter++;
+		ft_printf("count moves is %d\n", m->moves_counter);
+	}
 	return (0);
 }
 

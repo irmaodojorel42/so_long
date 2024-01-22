@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   image.c                                            :+:      :+:    :+:   */
+/*   images.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:57:11 by root              #+#    #+#             */
-/*   Updated: 2024/01/19 09:57:13 by root             ###   ########.fr       */
+/*   Updated: 2024/01/22 15:21:53 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "so_long.h"
 
@@ -19,14 +17,14 @@ void	image_inicialize(t_main *main)
 	int	i;
 
 	main->picture.collectable = mlx_xpm_file_to_image(main->mlx,
-			"./images/coletavel.xpm", &i, &i);
-	main->picture.wall = mlx_xpm_file_to_image(main->mlx, "./images/wall.xpm",
+			"./imagens/coletavel.xpm", &i, &i);
+	main->picture.wall = mlx_xpm_file_to_image(main->mlx, "./imagens/wall.xpm",
 			&i, &i);
 	main->picture.player = mlx_xpm_file_to_image(main->mlx,
-			"./images/player.xpm", &i, &i);
-	main->picture.floor = mlx_xpm_file_to_image(main->mlx, "./images/chao.xpm",
+			"./imagens/player.xpm", &i, &i);
+	main->picture.floor = mlx_xpm_file_to_image(main->mlx, "./imagens/chao.xpm",
 			&i, &i);
-	main->picture.exit = mlx_xpm_file_to_image(main->mlx, "./images/exit.xpm",
+	main->picture.exit = mlx_xpm_file_to_image(main->mlx, "./imagens/exit.xpm",
 			&i, &i);
 }
 

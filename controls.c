@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:57:46 by root              #+#    #+#             */
-/*   Updated: 2024/01/22 15:54:53 by root             ###   ########.fr       */
+/*   Updated: 2024/01/23 21:25:01 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ void	verification_moves(t_main *m, int x, int y)
 	}
 	else if (m->map[y][x] == 'E' && m->col == 0)
 	{
-		ft_putstr_fd("YOU ARRIVED IN MÉXICO, DRINK TEQUILAS!!!\n", 1);
+		ft_putstr_fd("Parabens, você foi pra cuba!!!\n", 1);
 		end(m);
 	}
 	m->player.y = y;
 	m->player.x = x;
 }
+
 
 int	key_hook(int keycode, t_main *m)
 {

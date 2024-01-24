@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:59:07 by root              #+#    #+#             */
-/*   Updated: 2024/01/23 21:10:51 by root             ###   ########.fr       */
+/*   Updated: 2024/01/24 10:17:27 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	util_alg(int x, int y, char **map_copy, int col)
 	{
 		if (map_copy[y][x] == 'C')
 			col--;
+		if ()
 		return (algoritmo(x, y, map_copy, col));
 	}
 	return (1);

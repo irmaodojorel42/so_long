@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:54:49 by root              #+#    #+#             */
-/*   Updated: 2024/01/23 22:07:16 by root             ###   ########.fr       */
+/*   Updated: 2024/01/25 12:28:11 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	map_caracteres_valids(char *s)
 
 	i = 0;
 	count = 0;
-	map = "PEC01\n";
+	map = "PEC01X\n";
 	while (s[count] != '\0')
 	{
 		if (s[count] == map[i])

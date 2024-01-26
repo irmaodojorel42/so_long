@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:53:39 by root              #+#    #+#             */
-/*   Updated: 2024/01/23 21:21:18 by root             ###   ########.fr       */
+/*   Updated: 2024/01/25 12:13:45 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,11 @@ typedef struct s_picture
 	void		*collectable;
 	void		*wall;
 	void		*player;
+	void		*player2;
 	void		*floor;
 	void		*exit;
+	void		*exit2;
+	void		*enemy;
 }				t_picture;
 
 typedef struct s_main
@@ -51,6 +54,7 @@ typedef struct s_main
 	void		*mlx;
 	int			moves_counter;
 	int			col;
+	int			change;
 	t_player	player;
 	t_picture	picture;
 }				t_main;
@@ -76,13 +80,15 @@ int				ft_strlen_sl(const char *s);
 ////////////// IMAGENS //////////////
 void			image_inicialize(t_main *main);
 int				render_image(t_main *main);
+void			util_image(t_main *main, int x, int y);
+
 
 ///////////  MAIN //////////
 int				end(t_main *main);
 void			free_map(char **m);
 
 ////////// ALGORITMO  /////////////
-int				algoritmo(int x, int y, char **map_copy, int col);
+int				algoritmo(int x, int y, char **map_copy, int col, t_main *main);
 char			**copy_map(t_main *main);
 void			check_map_alg(t_main *main, char **copy_map_temp);
 

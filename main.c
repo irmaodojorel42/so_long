@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:56:35 by root              #+#    #+#             */
-/*   Updated: 2024/01/19 13:13:11 by root             ###   ########.fr       */
+/*   Updated: 2024/01/25 09:35:50 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int ac, char **av)
 	main.player.x = 0;
 	main.player.y = 0;
 	main.moves_counter = 0;
+	
 	if (ac != 2)
 		exit(write(1, "Error\n", 6));
 	check_map(av, &main);

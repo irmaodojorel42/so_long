@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:57:11 by root              #+#    #+#             */
-/*   Updated: 2024/01/23 22:04:15 by root             ###   ########.fr       */
+/*   Updated: 2024/01/25 12:49:23 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,15 @@ void	image_inicialize(t_main *main)
 			&i, &i);
 	main->picture.player = mlx_xpm_file_to_image(main->mlx,
 			"./imagens/player.xpm", &i, &i);
+	main->picture.player2 = mlx_xpm_file_to_image(main->mlx,
+			"./imagens/player2.xpm", &i, &i);
 	main->picture.floor = mlx_xpm_file_to_image(main->mlx, "./imagens/chao.xpm",
 			&i, &i);
 	main->picture.exit = mlx_xpm_file_to_image(main->mlx, "./imagens/exit.xpm",
+			&i, &i);
+	main->picture.exit2 = mlx_xpm_file_to_image(main->mlx, "./imagens/exit2.xpm",
+			&i, &i);
+	main->picture.enemy = mlx_xpm_file_to_image(main->mlx, "./imagens/enemy.xpm",
 			&i, &i);
 }
 
@@ -37,11 +43,20 @@ void	util_image(t_main *main, int x, int y)
 		mlx_put_image_to_window(main->mlx, main->win, main->picture.floor, (x
 				* 64), (y * 64));
 	else if (main->map[y][x] == 'E')
-		mlx_put_image_to_window(main->mlx, main->win, main->picture.exit, (x
-				* 64), (y * 64));
+	{
+		if (main->change == 1)
+			mlx_put_image_to_window(main->mlx, main->win, main->picture.exit, (x
+					* 64), (y * 64));
+		else
+			mlx_put_image_to_window(main->mlx, main->win, main->picture.exit2, (x
+					* 64), (y * 64));
+	}
 	else if (main->map[y][x] == 'C')
 		mlx_put_image_to_window(main->mlx, main->win, main->picture.collectable,
 			(x * 64), (y * 64));
+	else if (main->map[y][x] == 'X')
+		mlx_put_image_to_window(main->mlx, main->win, main->picture.enemy, (x
+				* 64), (y * 64));
 }
 
 int	render_image(t_main *main)
@@ -56,7 +71,11 @@ int	render_image(t_main *main)
 		while (main->map[y][++x] != '\0')
 			util_image(main, x, y);
 	}
-	mlx_put_image_to_window(main->mlx, main->win, main->picture.player,
-		(main->player.x * 64), (main->player.y * 64));
+	if(main->change == 1)
+		mlx_put_image_to_window(main->mlx, main->win, main->picture.player,
+			(main->player.x * 64), (main->player.y * 64));
+	else if(main->change == 0)
+		mlx_put_image_to_window(main->mlx, main->win, main->picture.player2,
+			(main->player.x * 64), (main->player.y * 64));
 	return (0);
 }

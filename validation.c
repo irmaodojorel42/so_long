@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:50:56 by root              #+#    #+#             */
-/*   Updated: 2024/01/19 13:16:44 by root             ###   ########.fr       */
+/*   Updated: 2024/01/29 19:20:16 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	map_paredes(t_main *main)
 	i = -1;
 	while (++i < altura)
 	{
-		if (main->map[i][0] != '1' && main->map[i][largura] != '1')
+		if (main->map[i][0] != '1'  || main->map[i][largura ] != '1')
 		{
 			free_map(main->map);
 			exit(write(1, "erro na parede dos lados\n", 26));

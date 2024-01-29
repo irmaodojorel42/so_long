@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:56:35 by root              #+#    #+#             */
-/*   Updated: 2024/01/25 09:35:50 by root             ###   ########.fr       */
+/*   Updated: 2024/01/29 19:17:03 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,16 @@ int	end(t_main *main)
 	mlx_destroy_image(main->mlx, main->picture.wall);
 	mlx_destroy_image(main->mlx, main->picture.floor);
 	mlx_destroy_image(main->mlx, main->picture.exit);
+	mlx_destroy_image(main->mlx, main->picture.exit2);
 	mlx_destroy_image(main->mlx, main->picture.player);
+	mlx_destroy_image(main->mlx, main->picture.player2);
+	mlx_destroy_image(main->mlx, main->picture.enemy2);
+	mlx_destroy_image(main->mlx, main->picture.enemy);
 	mlx_destroy_window(main->mlx, main->win);
 	mlx_destroy_display(main->mlx);
 	mlx_loop_end(main->mlx);
 	free(main->mlx);
+	close(3);
 	exit(0);
 }
 

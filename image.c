@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:57:11 by root              #+#    #+#             */
-/*   Updated: 2024/01/25 12:49:23 by root             ###   ########.fr       */
+/*   Updated: 2024/01/29 09:50:04 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	image_inicialize(t_main *main)
 			&i, &i);
 	main->picture.enemy = mlx_xpm_file_to_image(main->mlx, "./imagens/enemy.xpm",
 			&i, &i);
+	main->picture.enemy2 = mlx_xpm_file_to_image(main->mlx, "./imagens/enemy2.xpm",
+			&i, &i);
 }
 
 void	util_image(t_main *main, int x, int y)
@@ -55,8 +57,14 @@ void	util_image(t_main *main, int x, int y)
 		mlx_put_image_to_window(main->mlx, main->win, main->picture.collectable,
 			(x * 64), (y * 64));
 	else if (main->map[y][x] == 'X')
-		mlx_put_image_to_window(main->mlx, main->win, main->picture.enemy, (x
-				* 64), (y * 64));
+	{
+		if (main->change == 3)
+			mlx_put_image_to_window(main->mlx, main->win, main->picture.enemy, (x
+					* 64), (y * 64));
+		else
+			mlx_put_image_to_window(main->mlx, main->win, main->picture.enemy2, (x
+					* 64), (y * 64));
+	}
 }
 
 int	render_image(t_main *main)

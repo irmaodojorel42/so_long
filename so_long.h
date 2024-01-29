@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:53:39 by root              #+#    #+#             */
-/*   Updated: 2024/01/25 12:13:45 by root             ###   ########.fr       */
+/*   Updated: 2024/01/26 14:16:38 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct s_picture
 	void		*exit;
 	void		*exit2;
 	void		*enemy;
+	void		*enemy2;
 }				t_picture;
 
 typedef struct s_main

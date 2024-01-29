@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:59:07 by root              #+#    #+#             */
-/*   Updated: 2024/01/25 12:58:08 by root             ###   ########.fr       */
+/*   Updated: 2024/01/26 14:20:39 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,6 @@ int	algoritmo(int x, int y, char **map_copy, int col, t_main *main)
 	}
 	if (map_copy[y][x] == 'E')
 		exit = 1;
-	//if (map_copy[y][x] == 'X')
-	//	exit = 1;
 	if (c == 1 && exit == 1)
 		return (0);
 	map_copy[y][x] = 'z';

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 09:57:46 by root              #+#    #+#             */
-/*   Updated: 2024/01/25 12:56:41 by root             ###   ########.fr       */
+/*   Updated: 2024/01/29 09:26:30 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	verification_moves(t_main *m, int x, int y)
 	}
 	else if (m->map[y][x] == 'X')
 	{
-		ft_putstr_fd("você foi impedido por um patriota!\n", 1);
+		ft_putstr_fd("você foi pego!\n", 1);
 		end(m);
 	}
 	m->player.y = y;

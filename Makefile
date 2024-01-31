@@ -6,7 +6,7 @@
 #    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 10:00:22 by root              #+#    #+#              #
-#    Updated: 2024/01/19 15:24:27 by root             ###   ########.fr        #
+#    Updated: 2024/01/31 11:36:33 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@make -C ./libft 
 	@make -C ./printf
+	@make -C ./minilibx-linux
 	@mv ./libft/$(LIBFT) . 
 	@mv ./printf/$(PRINTF) .
 	$(CC) $(OBJ) -Lminilibx-linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) libft.a libftprintf.a
@@ -51,6 +52,7 @@ clean:
 	$(RM) $(OBJ)
 	@make clean -C ./libft
 	@make clean -C ./printf
+	@make clean -C ./minilibx-linux
 
 
 fclean: clean
